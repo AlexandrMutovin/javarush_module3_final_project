@@ -17,31 +17,42 @@ public class AppServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
          userRepo = (UserRepo) config.getServletContext().getAttribute("userRepository");
-        System.out.println("====init======");
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        String userName = (String) session.getAttribute("userName");
-        if (userName != null){
-            //resp.sendRedirect("quest");
-            getServletContext().getRequestDispatcher("/start.jsp").forward(req, resp);
-            return;
-        }
-        System.out.println("fefee");
-        User user;
-        if (userRepo.isExistUser(userName)){
-            req.setAttribute("userName", userName);
-            System.out.println("fefee111111111111");
-            getServletContext().getRequestDispatcher("/start.jsp").forward(req, resp);
-        }
-        req.setAttribute("userName", "Юзера нету");
-        System.out.println("fefee222222222222");
 
+        HttpSession session = req.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user != null){
+            resp.sendRedirect("quest");
+        }
         getServletContext().getRequestDispatcher("/WEB-INF/start.jsp").forward(req, resp);
 
-        
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("post===========");
+        String userName  = req.getParameter("username");
+        if (userName == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/start.jsp").forward(req, resp);
+            return;
+        }
+
+        User user;
+        if (userRepo.isExistUser(userName)) {
+            user = userRepo.getUser(userName);
+        } else {
+            user = new User();
+            user.setUserName(userName);
+            userRepo.addUser(userName, user);
+
+            HttpSession session = req.getSession();
+            session.setAttribute("user", user);
+            resp.sendRedirect("quest");
+        }
+    }
+
 }

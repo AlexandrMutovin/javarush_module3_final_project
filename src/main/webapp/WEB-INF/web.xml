@@ -11,21 +11,20 @@
     <servlet-mapping>
         <servlet-name>AppServlet</servlet-name>
         <url-pattern></url-pattern>
+        <url-pattern>/start</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestServlet</servlet-name>
+        <servlet-class>ru.javarush.amutovin.module3.Servlets.QuestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestServlet</servlet-name>
+        <url-pattern>/quest</url-pattern>
+    </servlet-mapping>
+
     <listener>
         <listener-class>ru.javarush.amutovin.module3.AppContextListener</listener-class>
     </listener>
-    <filter>
-        <filter-name>CharsetFilter</filter-name>
-        <filter-class>ru.javarush.amutovin.module3.filters.CharsetFilter</filter-class>
-        <init-param>
-            <param-name>active</param-name>
-            <param-value>true</param-value>
-        </init-param>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>CharsetFilter</filter-name>
-        <servlet-name>*</servlet-name>
-    </filter-mapping>
 </web-app>
