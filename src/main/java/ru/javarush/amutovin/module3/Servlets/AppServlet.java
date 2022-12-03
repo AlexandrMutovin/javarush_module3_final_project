@@ -22,11 +22,11 @@ public class AppServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
         if (user != null){
             resp.sendRedirect("quest");
+            return;
         }
         getServletContext().getRequestDispatcher("/WEB-INF/start.jsp").forward(req, resp);
 
@@ -34,7 +34,6 @@ public class AppServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("post===========");
         String userName  = req.getParameter("username");
         if (userName == null) {
             getServletContext().getRequestDispatcher("/WEB-INF/start.jsp").forward(req, resp);

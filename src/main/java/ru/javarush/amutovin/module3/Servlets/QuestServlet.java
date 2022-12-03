@@ -12,6 +12,8 @@ import java.io.IOException;
 public class QuestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("utf-8");
+        req.setCharacterEncoding("utf-8");
         User user = (User )req.getSession().getAttribute("user");
         if (user == null) {
             resp.sendRedirect("start");
