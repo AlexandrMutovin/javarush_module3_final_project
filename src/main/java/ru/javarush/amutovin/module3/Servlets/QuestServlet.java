@@ -1,5 +1,7 @@
 package ru.javarush.amutovin.module3.Servlets;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.javarush.amutovin.module3.UserRepo.User;
 import ru.javarush.amutovin.module3.UserRepo.UserRepo;
 import ru.javarush.amutovin.module3.quests.Quest;
@@ -13,13 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class QuestServlet extends HttpServlet {
+    private static Logger logger = LogManager.getLogger(QuestServlet.class);
     Quest quest;
     UserRepo userRepo;
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
          quest = (Quest)config.getServletContext().getAttribute("quest");
+         logger.info("Загрузили квест");
         userRepo = (UserRepo) config.getServletContext().getAttribute("userRepository");
+        logger.info("Загрузили репозиторий");
     }
 
     @Override
@@ -27,7 +32,9 @@ public class QuestServlet extends HttpServlet {
 
         User user = (User) req.getSession().getAttribute("user");
         if (user == null) {
+            logger.info("Сессия пользователя не установлена");
             resp.sendRedirect("start");
+            logger.info("Редирект на страницу авторизации");
             return;
         }
         String nextQuestion = req.getParameter("nextQuestion");
