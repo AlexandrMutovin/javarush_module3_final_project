@@ -25,8 +25,8 @@
         </div>
     </c:forEach>
     <div class="list-group">
-        <span class="list-group-item list-group-item-action active">
-             Статистика:
+        <span class="list-group-item list-group-item-action">
+             <p><b>Статистика:</b></p>
 
             <p>Имя пользователя: ${user.userName}</p>
             <p>Количество записей на курс: ${user.successfulQuest}</p>
