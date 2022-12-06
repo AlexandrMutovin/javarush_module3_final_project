@@ -22,7 +22,7 @@ public class Quest {
                         new Question.Answers("Дневная группа", 14,false,false),
                         new Question.Answers("Вечерняя группа", 14,false, false),
                         new Question.Answers("Группа выходно дня", 14,false,false),
-                        new Question.Answers("Время не подходит", 4,false, true))));
+                        new Question.Answers("Время не подходит", 5,false, false))));
         replicas.add(new Question(4, "Вы записаны на курс. Желаем успешного обучения",
                 List.of(new Question.Answers("Пройти тест еще раз", 0,false, false))));
         replicas.add(new Question(5, "Ждем вас в следующий раз, спасибо!",
