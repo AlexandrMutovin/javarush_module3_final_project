@@ -6,7 +6,7 @@
          version="4.0">
     <servlet>
         <servlet-name>AppServlet</servlet-name>
-        <servlet-class>ru.javarush.amutovin.module3.Servlets.AppServlet</servlet-class>
+        <servlet-class>ru.javarush.amutovin.module3.servlets.AppServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AppServlet</servlet-name>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>QuestServlet</servlet-name>
-        <servlet-class>ru.javarush.amutovin.module3.Servlets.QuestServlet</servlet-class>
+        <servlet-class>ru.javarush.amutovin.module3.servlets.QuestServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>QuestServlet</servlet-name>
@@ -24,7 +24,7 @@
     </servlet-mapping>
 
     <listener>
-        <listener-class>ru.javarush.amutovin.module3.AppContextListener</listener-class>
+        <listener-class>ru.javarush.amutovin.module3.listeners.AppContextListener</listener-class>
     </listener>
 
 </web-app>

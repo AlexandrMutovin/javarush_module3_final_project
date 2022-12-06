@@ -1,7 +1,6 @@
-package ru.javarush.amutovin.module3;
+package ru.javarush.amutovin.module3.listeners;
 
-import ru.javarush.amutovin.module3.UserRepo.User;
-import ru.javarush.amutovin.module3.UserRepo.UserRepo;
+import ru.javarush.amutovin.module3.repository.UserRepo;
 import ru.javarush.amutovin.module3.quests.Quest;
 
 import javax.servlet.ServletContext;

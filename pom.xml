@@ -42,11 +42,10 @@
             <version>1.18.20.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+
     </dependencies>
     <build>
-
-
-
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>

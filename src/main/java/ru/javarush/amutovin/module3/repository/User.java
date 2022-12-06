@@ -1,4 +1,4 @@
-package ru.javarush.amutovin.module3.UserRepo;
+package ru.javarush.amutovin.module3.repository;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,9 +18,10 @@ public class User {
     @Getter
     @Setter
     private String ipAddress;
-
     @Getter
     @Setter
     private Question question;
-
+    @Getter
+    @Setter
+    private Integer countTrueAnswers;
 }

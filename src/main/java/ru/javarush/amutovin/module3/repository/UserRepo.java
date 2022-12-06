@@ -1,4 +1,4 @@
-package ru.javarush.amutovin.module3.UserRepo;
+package ru.javarush.amutovin.module3.repository;
 
 
 import java.util.HashMap;

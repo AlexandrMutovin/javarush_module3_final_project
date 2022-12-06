@@ -22,6 +22,7 @@ public static class Answers {
         private String text;
         private Integer nextQuestionId;
         private Boolean trueAnswer;
+        private Boolean finish;
 
 
     }

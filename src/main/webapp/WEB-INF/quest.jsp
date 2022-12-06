@@ -20,7 +20,7 @@
     </div>
     <c:forEach items="#{user.question.answerList}" var="answer">
         <div class="list-group">
-            <a href="${pageContext.request.contextPath}/quest?nextQuestion=${answer.nextQuestionId}&endQuest=${answer.trueAnswer}"
+            <a href="${pageContext.request.contextPath}/quest?nextQuestion=${answer.nextQuestionId}&trueAnswer=${answer.trueAnswer}&finish=${answer.finish}"
                class="list-group-item list-group-item-action">${answer.text}</a>
         </div>
     </c:forEach>
@@ -30,6 +30,7 @@
 
             <p>Имя пользователя: ${user.userName}</p>
             <p>Количество записей на курс: ${user.successfulQuest}</p>
+            <p>Поличество правильных ответов: ${user.countTrueAnswers}</p>
             <p>ip адрес пользователя: ${user.ipAddress}</p>
 
 </span>
