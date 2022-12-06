@@ -12,7 +12,7 @@ public class Quest {
                         new Question.Answers("Нет, слышу в первый раз", 1,false,false))));
         replicas.add(new Question(1, "Желаете выучить язык программирования Java?",
                 List.of(new Question.Answers("Желаю", 2,false,false),
-                        new Question.Answers("Нет, не желаю", 5,false,true))));
+                        new Question.Answers("Нет, не желаю", 5,false,false))));
         replicas.add(new Question(2, "Какой курс желаете пройти?",
                 List.of(new Question.Answers("Junior", 3,false, false),
                         new Question.Answers("Middle", 3,false, false),
@@ -26,7 +26,7 @@ public class Quest {
         replicas.add(new Question(4, "Вы записаны на курс. Желаем успешного обучения",
                 List.of(new Question.Answers("Пройти тест еще раз", 0,false, false))));
         replicas.add(new Question(5, "Ждем вас в следующий раз, спасибо!",
-                List.of(new Question.Answers("Записаться на курс повторно?", 0,false,false))));
+                List.of(new Question.Answers("Записаться на курс?", 0,false,false))));
 
         replicas.add(new Question(6, "Как правильно объявить массив?",
                 List.of(new Question.Answers(" int a = new int[] {1, 2, 3, 4, 5};", 7,false,false),
@@ -75,7 +75,7 @@ public class Quest {
 
         replicas.add(new Question(14, "Желаете пройти тестирование?",
                 List.of(new Question.Answers("Да", 6,false,false),
-                new Question.Answers("Нет", 4,false,false))));
+                new Question.Answers("Нет", 4,false,true))));
 
     }
     public Question getNextQuestion(int id) {
