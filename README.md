@@ -1,2 +1,3 @@
 # javarush_module3_final_project
-My project for module3, use Servlets
+Итоговый проект 3 модуля
+Пример работы приложения можно посмотреть по ссылке http://80.211.135.89:8182/

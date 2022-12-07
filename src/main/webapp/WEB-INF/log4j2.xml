@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="org.apache.logging.log4j.web">
+    <Appenders>
+        <RollingFile name="RollingFiles" fileName="../logs/module3/app.log" filePattern="../logs/module3/$${date:yyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz" append="true">
+        <PatternLayout>
+            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+        </PatternLayout>
+        <Policies>
+            <OnStartupTriggeringPolicy/>
+            <SizeBasedTriggeringPolicy size="10 KB"/>
+        </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+
+        <Logger name="ru.javarush.amutovin.module3.servlets" level="debug" additivity="false">
+            <AppenderRef ref="RollingFiles"></AppenderRef>
+        </Logger>
+        <Root level="all">
+            <AppenderRef ref="RollingFiles"/>
+        </Root>
+    </Loggers>
+</Configuration>
